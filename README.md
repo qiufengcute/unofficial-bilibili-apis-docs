@@ -1,4 +1,4 @@
-[image](img/icon.png)
+[![image](img/icon.png)]
 # unofficial-bilibili-apis-docs(简称UBAD)
 [![GitHub stars](https://img.shields.io/github/stars/qiufengcute/unofficial-bilibili-apis-docs.svg?style=flat&color=yellow)](https://github.com/qiufengcute/unofficial-bilibili-apis-docs/stargazers)
 [![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/qiufengcute/unofficial-bilibili-apis-docs/blob/master/LICENSE)
