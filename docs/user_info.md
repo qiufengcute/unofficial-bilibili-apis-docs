@@ -7,10 +7,14 @@ API地址：https://api.bilibili.com/x/space/acc/info
 
 ## 示例调用  
 >URL
+
+
 ```
 https://api.bilibili.com/x/space/acc/info?mid=3493083538786837
 ```  
 >python
+
+
 ```
 import requests
 
@@ -19,6 +23,8 @@ print(requests.get(f"https://api.bilibili.com/x/space/acc/info?mid=3493083538786
 
 ## 示例返回  
 >json
+
+
 ```
 {
   "code": 0,
