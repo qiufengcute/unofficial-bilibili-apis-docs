@@ -1,5 +1,5 @@
 # 公告  
-API地址:https://api.bilibili.com/x/space/notice
+API地址:`https://api.bilibili.com/x/space/notice`  
 ## 参数  
 | 参数名 | 类型   | 必填 | 说明               | 示例值           |
 |--------|--------|------|--------------------|------------------|
