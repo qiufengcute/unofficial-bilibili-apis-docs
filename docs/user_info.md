@@ -1,19 +1,21 @@
 # 用户信息  
 API地址：https://api.bilibili.com/x/space/acc/info  
 参数：  
-|  参数名  |  内容  |  示例  |
-| ------------ | ------------ |
+|  参数名|  内容          |  示例    |
+| ------| -------------- |----------|
 |  mid  |  查询用户的uid  |  123456  |
 
 示例调用：
 `https://api.bilibili.com/x/space/acc/info?mid=3493083538786837`  
-```python
+```
+python
 import requests
 
 print(requests.get(f"https://api.bilibili.com/x/space/acc/info?mid=3493083538786837"))
 ```
 示例返回：
-```json
+```
+json
 {
   "code": 0,
   "message": "0",
@@ -205,7 +207,7 @@ print(requests.get(f"https://api.bilibili.com/x/space/acc/info?mid=3493083538786
       "desc": ""
     }
   }
-}```  
+}```
 返回参数：
 备注：
 这个API非常容易请求过于频繁
