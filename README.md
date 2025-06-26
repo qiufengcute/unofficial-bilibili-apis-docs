@@ -1,6 +1,6 @@
 # unofficial-bilibili-apis-docs
 一个不经常更新的非官方b站API文档  
->**Warning**
+>**Warning**  
 >请勿滥用，本项目仅用于学习！  
->利用本项目提供的接口、文档等造成不良影响及后果与本人无关  
->由于本项目的特殊性，可能随时停止开发或删档  
+# 目录
+[docs/user_info.md]用户信息
