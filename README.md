@@ -1,4 +1,5 @@
 # unofficial-bilibili-apis-docs  
+简称UBAD
 一个不经常更新的非官方b站API文档  
 我的b站uid是3493083538786837,后续将会经常出现  
 [我的b站主页](https://space.bilibili.com/3493083538786837)  
