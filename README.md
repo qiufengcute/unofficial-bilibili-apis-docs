@@ -3,7 +3,7 @@
 [![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/qiufengcute/unofficial-bilibili-apis-docs/blob/master/LICENSE)  
 一个不经常更新的非官方b站API文档  
 我的b站uid是3493083538786837,后续将会经常出现  
-[我的b站主页](https://space.bilibili.com/3493083538786837)  
+[![](https://logo800.cn/uploads/logoxinshang/56/logo800_16491624018615580.png)](https://space.bilibili.com/3493083538786837)  
 
 >**⚠️警告**  
 >请勿滥用,本项目仅用于学习!
