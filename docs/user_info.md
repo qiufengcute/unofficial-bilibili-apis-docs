@@ -1,6 +1,3 @@
----
-layout: none  # 禁用 Jekyll 处理
----
 # 用户信息  
 API地址：https://api.bilibili.com/x/space/acc/info 
 ## 参数  
@@ -277,6 +274,23 @@ print(requests.get(f"https://api.bilibili.com/x/space/acc/info?mid=3493083538786
 | .data.vip.label.bg_color | 标签背景色  | #FB7299 | 无 |  
 | .data.vip.label.border_color  |  标签边框颜色  | （空）  | （空）=无边框  |  
 | .data.vip.label.use_img_label | 是否使用图片标签  | true | true/false |  
+| .data.vip.label.img_label_uri_hans | 简体中文动态标签图片（未启用时为空）  | （空） | URL |  
+| .data.vip.label.img_label_uri_hant  |  繁体中文动态标签图片（未启用时为空）  | （空）  | URL  |  
+| .data.vip.label.img_label_uri_hans_static | 简体中文静态标签图片 | https://i0.hdslb.com/bfs/bangumi/kt/b52851866abcee9029b1bfb025d4a6ede3d461a6.png | URL，实际显示的图片 | 
+| .data.vip.label.img_label_uri_hant_static | 繁体中文静态标签图片 | https://i0.hdslb.com/bfs/activity-plat/static/20220614/e369244d0b14644f5e1a06431e22a4d5/VEW8fCC0hg.png | URL，实际显示的图片 |
+| .data.vip.label.label_id | 大会员标签类型ID | 40 | 10=月度大会员,20=季度大会员,40=年度大会员 |
+| .data.vip.label.label_goto.mobile | 移动端点击标签跳转URL | （空） | 留空表示使用默认行为 |
+| .data.vip.label.label_goto.pc_web | PC端点击标签跳转URL | https://account.bilibili.com/big?from_spmid=vipicon | 通常指向大会员权益页 |
+| .data.vip.avatar_subscript | 头像角标显示控制 | 1 | 0=不显示，1=显示 |
+| .data.vip.nickname_color | 昵称专属颜色 | #FB7299 | 无 |
+| .data.vip.role | 会员权限等级 | 3 | 1=普通大会员，3=年度/高级大会员 |
+| .data.vip.avatar_subscript_url | PC端点击标签跳转URL | https://account.bilibili.com/big?from_spmid=vipicon | 通常指向大会员权益页 |t
+| .data.vip.tv_vip_status | PC端点击标签跳转URL | https://account.bilibili.com/big?from_spmid=vipicon | 通常指向大会员权益页 |t
+| .data.vip.tv_vip_pay_type | PC端点击标签跳转URL | https://account.bilibili.com/big?from_spmid=vipicon | 通常指向大会员权益页 |t
+| .data.vip.tv_due_date | PC端点击标签跳转URL | https://account.bilibili.com/big?from_spmid=vipicon | 通常指向大会员权益页 |t
+| .data.vip.avatar_icon.icon_type | PC端点击标签跳转URL | https://account.bilibili.com/big?from_spmid=vipicon | 通常指向大会员权益页 |t
+| .data.vip.avatar_icon.icon_resource.type | PC端点击标签跳转URL | https://account.bilibili.com/big?from_spmid=vipicon | 通常指向大会员权益页 |t
+| .data.vip.avatar_icon.icon_resource.url | PC端点击标签跳转URL | https://account.bilibili.com/big?from_spmid=vipicon | 通常指向大会员权益页 |t
 
 
 ## 附表
