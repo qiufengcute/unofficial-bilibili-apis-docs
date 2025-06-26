@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户创作 | 一个不经常更新的非官方b站API文档</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3, h4 {
+            color: #222;
+            margin-top: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        h1 {
+            font-size: 2em;
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 0.3em;
+        }
+        h2 {
+            font-size: 1.5em;
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 0.3em;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            display: block;
+            overflow-x: auto;
+        }
+        th, td {
+            border: 1px solid #dfe2e5;
+            padding: 6px 13px;
+        }
+        th {
+            background-color: #f6f8fa;
+            font-weight: 600;
+        }
+        tr:nth-child(2n) {
+            background-color: #f6f8fa;
+        }
+        pre {
+            background-color: #f6f8fa;
+            border-radius: 3px;
+            padding: 16px;
+            overflow: auto;
+            line-height: 1.45;
+            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+            border: 1px solid #e1e4e8;
+        }
+        code {
+            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+            background-color: rgba(27,31,35,0.05);
+            border-radius: 3px;
+            padding: 0.2em 0.4em;
+            font-size: 85%;
+        }
+        blockquote {
+            border-left: 4px solid #dfe2e5;
+            color: #6a737d;
+            padding: 0 1em;
+            margin: 0 0 16px 0;
+        }
+        a {
+            color: #00a1d6;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #00a1d6;
+            text-decoration: underline;
+        }
+        .github-links {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eaecef;
+        }
+        .github-links a {
+            display: block;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="用户创作">用户创作</h1>
+    <p>API地址:<code>https://api.bilibili.com/x/space/navnum</code></p>
+    
+    <h2 id="参数">参数</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>参数名</th>
+                <th>类型</th>
+                <th>必填</th>
+                <th>说明</th>
+                <th>示例值</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>mid</td>
+                <td>数字</td>
+                <td>是</td>
+                <td>查询用户的UID</td>
+                <td>3493083538786837</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h2 id="示例调用">示例调用</h2>
+    <blockquote>
+        <p>URL</p>
+    </blockquote>
+    <pre>https://api.bilibili.com/x/space/navnum?mid=3493083538786837</pre>
+    
+    <blockquote>
+        <p>python</p>
+    </blockquote>
+    <pre>import requests
+
+print(requests.get(f"https://api.bilibili.com/x/space/navnum?mid=3493083538786837"))</pre>
+    
+    <h2 id="示例返回">示例返回</h2>
+    <blockquote>
+        <p>json</p>
+    </blockquote>
+    <pre>{
+  "code": 0,
+  "message": "0",
+  "ttl": 1,
+  "data": {
+    "video": 52,
+    "bangumi": 0,
+    "cinema": 1,
+    "channel": {
+      "master": 2,
+      "guest": 2
+    },
+    "favourite": {
+      "master": 7,
+      "guest": 7
+    },
+    "tag": 0,
+    "article": 0,
+    "playlist": 0,
+    "album": 5,
+    "audio": 0,
+    "pugv": 0,
+    "season_num": 1,
+    "opus": 5
+  }
+}</pre>
+    
+    <h2 id="返回参数">返回参数</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>参数地址</th>
+                <th>内容</th>
+                <th>示例</th>
+                <th>备注</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>.code</td>
+                <td>返回代码</td>
+                <td>0</td>
+                <td>0为正常(200)</td>
+            </tr>
+            <tr>
+                <td>.message</td>
+                <td>错误代码</td>
+                <td>0</td>
+                <td>在code为0时此处也为0</td>
+            </tr>
+            <tr>
+                <td>.ttl</td>
+                <td>失效时间(s)</td>
+                <td>1</td>
+                <td>社交信息随时会变动,所以一般都是1</td>
+            </tr>
+            <tr>
+                <td>.data.video</td>
+                <td>上传视频数</td>
+                <td>52</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>.data.bangumi</td>
+                <td>上传的番剧/国创动画数</td>
+                <td>0</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>.data.cinema</td>
+                <td>影视内容数</td>
+                <td>1</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>.data.channel.master</td>
+                <td>主频道数</td>
+                <td>2</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>.data.channel.guest</td>
+                <td>参与频道数</td>
+                <td>0</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>.data.favourite.master</td>
+                <td>创建收藏夹数</td>
+                <td>7</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>.data.favourite.guest</td>
+                <td>参与收藏夹数</td>
+                <td>7</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>.data.tag</td>
+                <td>创建的标签数</td>
+                <td>0</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>.data.article</td>
+                <td>发布的专栏文章数</td>
+                <td>0</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>.data.playlist</td>
+                <td>创建的播单/视频合集数</td>
+                <td>0</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>.data.album</td>
+                <td>相册数</td>
+                <td>5</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>.data.audio</td>
+                <td>上传的音频数</td>
+                <td>0</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>.data.pugv</td>
+                <td>参与的PUGV课程数</td>
+                <td>0</td>
+                <td>PUGV=专业用户生成视频</td>
+            </tr>
+            <tr>
+                <td>.data.season_num</td>
+                <td>合集/系列数</td>
+                <td>1</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>.data.opus</td>
+                <td>动态/作品数</td>
+                <td>5</td>
+                <td>无</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="github-links">
+        <a href="https://qiufengcute.github.io/unofficial-bilibili-apis-docs/">返回主页</a>
+        <a href="https://github.com/qiufengcute/unofficial-bilibili-apis-docs/edit/main/docs/html/user_authoring.html">在Github上编辑此页(html)</a>
+        <a href="https://github.com/qiufengcute/unofficial-bilibili-apis-docs/edit/main/docs/markdown/user_authoring.md">在Github上编辑此页(markdown)</a>
+        <a href="https://github.com/qiufengcute/unofficial-bilibili-apis-docs/">Github上的此项目</a>
+    </div>
+</body>
+</html>
