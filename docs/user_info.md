@@ -10,7 +10,6 @@ URL
 `https://api.bilibili.com/x/space/acc/info?mid=3493083538786837`  
 python
 ```
-
 import requests
 
 print(requests.get(f"https://api.bilibili.com/x/space/acc/info?mid=3493083538786837"))
@@ -210,7 +209,8 @@ json
       "desc": ""
     }
   }
-}```
+}
+```
 
 ## 返回参数
 ## 备注
