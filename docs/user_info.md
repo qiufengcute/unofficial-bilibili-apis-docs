@@ -145,7 +145,7 @@ print(requests.get(f"https://api.bilibili.com/x/space/acc/info?mid=3493083538786
       "roomStatus": 1,
       "liveStatus": 0,
       "url": "https://live.bilibili.com/31826581?broadcast_type=0&is_room_feed=0",
-      "title": "首次开播,请多关照！",
+      "title": "首次开播，请多关照！",
       "cover": "https://i0.hdslb.com/bfs/live/63a1e4a8fa91c2eac9321ce76b309b221c9be7a8.png",
       "roomid": 31826581,
       "roundStatus": 0,
@@ -314,7 +314,7 @@ print(requests.get(f"https://api.bilibili.com/x/space/acc/info?mid=3493083538786
 | .data.live_room.roomStatus | 直播间开通状态 | 1 | 0=未开通,1=已开通 |
 | .data.live_room.liveStatus | 直播状态 | 0 | 0=未开播,1/2=直播中 |
 | .data.live_room.url | 直播间完整URL | https://live.bilibili.com/31826581?broadcast_type=0&is_room_feed=0 | 含跟踪参数 |
-| .data.live_room.title | 直播间标题 | 首次开播,请多关照！ | 最后一场直播的标题 |
+| .data.live_room.title | 直播间标题 | 首次开播，请多关照！ | 最后一场直播的标题 |
 | .data.live_room.cover | 直播间封面图 | https://i0.hdslb.com/bfs/live/63a1e4a8fa91c2eac9321ce76b309b221c9be7a8.png | 尺寸:16:9 |
 | .data.live_room.roomid | 直播间真实ID | 31826581 | 不同于用户UID |
 | .data.live_room.roundStatus | 轮播状态 | 0 | 0=未轮播,1=轮播中 |
@@ -326,7 +326,7 @@ print(requests.get(f"https://api.bilibili.com/x/space/acc/info?mid=3493083538786
 | .data.live_room.watch_show.icon | 观看数图标 | https://i0.hdslb.com/bfs/live/a725a9e61242ef44d764ac911691a7ce07f36c1d.png | 移动端 |
 | .data.live_room.watch_show.icon_location | 预留字段 | (空)| 无 |
 | .data.live_room.watch_show.icon_web | 观看数图标 | https://i0.hdslb.com/bfs/live/8d9d0f33ef8bf6f308742752d13dd0df731df19c.png | PC端及网页端 |
-| .data.birthday | 生日日期 | 07-05 | 非时间戳！ |
+| .data.birthday | 生日日期 | 07-05 | 非时间戳! |
 | .data.school.name | 学校名称 | (空) | 需要通过认证才会显示 |
 | .data.profession.name | 职业名称 | (空) | 无 |
 | .data.profession.department | 所属部门/机构 | (空) | 无 |
