@@ -6,8 +6,10 @@ API地址：https://api.bilibili.com/x/space/acc/info
 |  mid  |  查询用户的uid  |  3493083538786837  |  是  |  无  |  
 
 ## 示例调用  
-URL
-`https://api.bilibili.com/x/space/acc/info?mid=3493083538786837`  
+>URL
+```
+https://api.bilibili.com/x/space/acc/info?mid=3493083538786837
+```  
 >python
 ```
 import requests
