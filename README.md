@@ -3,4 +3,4 @@
 >**Warning**  
 >请勿滥用，本项目仅用于学习！  
 # 目录
-(docs/user_info.md)[用户信息]
+[用户信息](docs/user_info.md)
