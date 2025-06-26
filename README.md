@@ -10,3 +10,4 @@
 # 目录  
 - [用户信息](docs/html/user_info.html)  
 - [公告](docs/html/notice.html)
+- [用户社交](docs/html/user_social.html)
