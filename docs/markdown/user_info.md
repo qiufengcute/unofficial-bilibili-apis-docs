@@ -431,6 +431,6 @@ print(requests.get(f"https://api.bilibili.com/x/space/acc/info?mid=3493083538786
 这个API非常容易请求过于频繁
 
 ## Github链接
-[在Github上编辑此页(html)](https://github.com/qiufengcute/unofficial-bilibili-apis-docs/edit/main/docs/html/user_info.html)
-[在Github上编辑此页(markdown)](https://github.com/qiufengcute/unofficial-bilibili-apis-docs/edit/main/docs/markdown/user_info.md)
+[在Github上编辑此页(html)](https://github.com/qiufengcute/unofficial-bilibili-apis-docs/edit/main/docs/html/user_info.html)  
+[在Github上编辑此页(markdown)](https://github.com/qiufengcute/unofficial-bilibili-apis-docs/edit/main/docs/markdown/user_info.md)  
 [Github上的此项目](https://github.com/qiufengcute/unofficial-bilibili-apis-docs/)
