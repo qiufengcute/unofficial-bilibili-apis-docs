@@ -1,5 +1,5 @@
 # 用户社交
-API地址:https://api.bilibili.com/x/relation/stat
+API地址:`https://api.bilibili.com/x/relation/stat`
 
 ## 参数
 |参数名|	类型	|必填|	说明|	示例值|
