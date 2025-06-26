@@ -264,7 +264,7 @@ print(requests.get(f"https://api.bilibili.com/x/space/acc/info?mid=3493083538786
 | .data.vip.type  |  会员类型 |  2 |  0=无，1=月度，2=年度（含自动续费），3=其他 |  
 | .data.vip.status  |  会员是否有效 |  1 | 0=过期，1=有效  |  
 | .data.vip.due_date  | 到期时间  |  1759334400000 | 时间戳  |  
-| .data.vip.vip_pay_type  | 支付方式  | 0  | 0=未付费（如活动赠送），1=已付费，2=自动续费开通（可能会有问题）  |  
+| .data.vip.vip_pay_type  | 支付方式  | 0  | 0=未付费（如活动赠送），1=已付费（可能会有问题）  |  
 | .data.vip.theme_type  | 主题样式  | 0  |  见附表3 |  
 | .data.vip.label.path  | 会员图片  | http://i0.hdslb.com/bfs/vip/label_annual.png  | URL  |  
 | .data.vip.label.text  | 会员名称  | 年度大会员  | 无  |  
@@ -284,14 +284,50 @@ print(requests.get(f"https://api.bilibili.com/x/space/acc/info?mid=3493083538786
 | .data.vip.avatar_subscript | 头像角标显示控制 | 1 | 0=不显示，1=显示 |
 | .data.vip.nickname_color | 昵称专属颜色 | #FB7299 | 无 |
 | .data.vip.role | 会员权限等级 | 3 | 1=普通大会员，3=年度/高级大会员 |
-| .data.vip.avatar_subscript_url | PC端点击标签跳转URL | https://account.bilibili.com/big?from_spmid=vipicon | 通常指向大会员权益页 |t
-| .data.vip.tv_vip_status | PC端点击标签跳转URL | https://account.bilibili.com/big?from_spmid=vipicon | 通常指向大会员权益页 |t
-| .data.vip.tv_vip_pay_type | PC端点击标签跳转URL | https://account.bilibili.com/big?from_spmid=vipicon | 通常指向大会员权益页 |t
-| .data.vip.tv_due_date | PC端点击标签跳转URL | https://account.bilibili.com/big?from_spmid=vipicon | 通常指向大会员权益页 |t
-| .data.vip.avatar_icon.icon_type | PC端点击标签跳转URL | https://account.bilibili.com/big?from_spmid=vipicon | 通常指向大会员权益页 |t
-| .data.vip.avatar_icon.icon_resource.type | PC端点击标签跳转URL | https://account.bilibili.com/big?from_spmid=vipicon | 通常指向大会员权益页 |t
-| .data.vip.avatar_icon.icon_resource.url | PC端点击标签跳转URL | https://account.bilibili.com/big?from_spmid=vipicon | 通常指向大会员权益页 |t
-
+| .data.vip.avatar_subscript_url | 预留字段（始终为空） | （空） | 未来可能用于动态角标 |
+| .data.vip.tv_vip_status | 电视端VIP状态 | 0 | 0=未开通，1=有效 |
+| .data.vip.tv_vip_pay_type | 电视端支付方式 | 0 | 0=未付费（如活动赠送），1=已付费（可能会有问题） |
+| .data.vip.tv_due_date | 电视端VIP到期时间戳 | 0 | 0表示未开通 |
+| .data.vip.avatar_icon.icon_type | 角标类型 | 3 | 见附表5 |
+| .data.vip.avatar_icon.icon_resource.type | 资源类型 | 1 | 见附表6 |
+| .data.vip.avatar_icon.icon_resource.url | 角标图片地址 | https://i0.hdslb.com/bfs/bangumi/kt/aba51485c0d02940c89aeefcf6680510d9858472.png | 无 |
+| .data.pendant.pid | 挂件唯一ID | 2701 | 无 |
+| .data.pendant.name | 挂件显示名称 | 七濑胡桃 | 无 |
+| .data.pendant.image | 标准版挂件图片 | https://i1.hdslb.com/bfs/garb/item/2c40fe802d1935d96e4fc63ec42274d8846a34b7.png | URL,分辨率较低，已逐渐弃用 |
+| .data.pendant.expire | 挂件过期时间 | 0 | 0=永久有效，时间戳 |
+| .data.pendant.image_enhance | 高清版挂件图片 | https://i1.hdslb.com/bfs/garb/item/2c40fe802d1935d96e4fc63ec42274d8846a34b7.png | URL,当前实际使用的资源|
+| .data.pendant.image_enhance_frame | 动态挂件的边框特效资源 | （空） | URL,空表示静态挂件
+| .data.pendant.n_pid | 新版挂件唯一ID | 2701 | 与旧版相同时表示未更新 |
+| .data.nameplate.nid | 勋章唯一ID | 61 | 无 |
+| .data.nameplate.name | 勋章名称 | 有爱楷模 | 无 |
+| .data.nameplate.image | 标准尺寸勋章图片 | https://i1.hdslb.com/bfs/face/5a90f715451325c642a6ac39e01195cb6d075734.png | URL,约100×100px |
+| .data.nameplate.image_small | 小尺寸勋章图片 | https://i0.hdslb.com/bfs/face/5bfc1b4fb3f4b411495dddb0b2127ad80f6fbcac.png | URL,约50×50px,用于评论区等小空间展示 |
+| .data.nameplate.level | 勋章等级分类 | 普通勋章 | 普通/稀有/限定 |
+| .data.nameplate.condition | 获取条件说明 | 当前持有粉丝勋章最高等级\u003E=10级 | 含Unicode转义字符\u003E表示>符号,大部分语言在读取json时会把它转换回去 |
+| .data.user_honour_info.mid | 预留字段 | 0 | 始终为0 |
+| .data.user_honour_info.colour | 荣誉标签颜色值 | null | RGB HEX，为null表示无荣誉|
+| .data.user_honour_info.tags | 荣誉标签列表 | [] | 空数组表示当前无荣誉|
+| .data.user_honour_info.is_latest_100honour | 是否进入 高能100 榜单 | 0 | 0=未进入，1=已进入|
+| .data.is_followed | 当前查询者是否已关注被查询者 | false | 需要登录态,未登录或查询自己时固定返回false |
+| .data.top_photo | 个人主页顶部横幅图 | bfs/space/f35f1c09d709f5387814bbbfa614a391e73d9132.png | 完整URL=https://i0.hdslb.com/+top_photo |
+| .data.sys_notice | 预留字段 | {} | 曾用于封禁通知等系统消息（现改用独立API）,目前始终为空对象{} |
+| .data.live_room.roomStatus | 直播间开通状态 | 1 | 0=未开通，1=已开通 |
+| .data.live_room.liveStatus | 直播状态 | 0 | 0=未开播，1/2=直播中 |
+| .data.live_room.url | 直播间完整URL | https://live.bilibili.com/31826581?broadcast_type=0&is_room_feed=0 | 含跟踪参数 |
+| .data.live_room.title | 直播间标题 | 首次开播，请多关照！ | 最后一场直播的标题 |
+| .data.live_room.cover | 直播间封面图 | https://i0.hdslb.com/bfs/live/63a1e4a8fa91c2eac9321ce76b309b221c9be7a8.png | 尺寸：16:9 |
+| .data.live_room.roomid | 直播间真实ID | 31826581 | 不同于用户UID |
+| .data.live_room.roundStatus | 轮播状态 | 0 | 0=未轮播，1=轮播中 |
+| .data.live_room.broadcast_type | 直播类型 | 0 | 0=普通直播，1=手机直播，2=PC端直播 |
+| .data.live_room.watch_show.switch | 是否显示观看量 | true | true/false |
+| .data.live_room.watch_show.num | 观看人数 | 1 | 无 |
+| .data.live_room.watch_show.text_small | 移动端显示文本 | 1 | 无 |
+| .data.live_room.watch_show.text_large | PC端显示文本 | 1人看过 | 无 |
+| .data.live_room.watch_show.icon | 观看数图标 | https://i0.hdslb.com/bfs/live/a725a9e61242ef44d764ac911691a7ce07f36c1d.png | 移动端 |
+| .data.live_room.watch_show.icon_location | 预留字段 | （空）| 无 |
+| .data.live_room.watch_show.icon_web | 观看数图标 | https://i0.hdslb.com/bfs/live/8d9d0f33ef8bf6f308742752d13dd0df731df19c.png | PC端及网页端 |
+| .data.birthday | 生日日期 | 07-05 | 非时间戳！ |
+| .data.school.name | 学校名称 | （空） | 需要通过认证才会显示 |
 
 ## 附表
 
@@ -324,7 +360,7 @@ print(requests.get(f"https://api.bilibili.com/x/space/acc/info?mid=3493083538786
 | >2  | 特殊限定主题（需活动获取或付费）  |如「周年庆限定」「番剧联名」等稀有皮肤 |
 
 
-### 附表3   
+### 附表4  
 | 值  |  样式类型 | 视觉效果 |典型应用场景|
 | ------------ | ------------ | --------- |----
 | 0  |   无背景   | 仅显示文字（无背景色和边框）|简约模式/特殊活动
@@ -334,6 +370,27 @@ print(requests.get(f"https://api.bilibili.com/x/space/acc/info?mid=3493083538786
 | 4 |  动态流光  |  基础背景色 + 水平流动光效（需配合 use_img_label 使用）   |年度大会员促销期
 | 5 |   径向渐变 |   从中心向四周的放射渐变（中心色 medal_color_start，边缘色 medal_color_end）  |限定IP合作主题
 
+
+### 附表5  
+|值|	类型说明|	图标样式|	适用用户
+| ------------ | ------------ | --------- |----
+|0	|无角标	|无|	普通用户
+|1|	月度大会员角标|	蓝色月牙图标|	月度订阅用户
+|2	|年度大会员角标（旧版）|	银色年度徽章	|2020年前的年度会员
+|3|	年度大会员角标（新版）| 粉色“大”字角标 |	当前年度会员
+|4	|自动续费标识|	金色"续"字小标|	开通自动续费的年度会员
+|5|	联合会员角标|	带合作方LOGO（如"大会员+网易云"）|	联合订阅用户
+|6	|活动限定角标|	节日/活动特殊图标（如拜年纪限定）	|临时活动获取
+
+
+### 附表6
+|值	|类型说明|	特点|
+|---|---|---|
+|0|	无资源|	无|
+|1	|静态图片|	PNG/JPG常规图片|
+|2|	动态图片|	APNG/WEBP动图|
+|3	|SVG矢量图|	可无损缩放|
+|4|	Lottie动画|	JSON格式的矢量动画|
 
 ## 备注
 这个API非常容易请求过于频繁
