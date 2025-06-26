@@ -332,6 +332,25 @@ print(requests.get(f"https://api.bilibili.com/x/space/acc/info?mid=3493083538786
 | .data.profession.department | 所属部门/机构 | (空) | 无 |
 | .data.profession.title | 职称 | (空) | 无 |
 | .data.profession.is_show | 是否公开显示 | 0 | 0=隐藏,1=显示 |
+| .data.tags | 预留标签字段 | null | 始终为null,实际标签通过其他接口获取 |
+| .data.series.user_upgrade_status | 账号升级状态 | 3 | 0=未激活,1=待审核,2=待支付/待确认,3=已完成升级 |
+| .data.series.show_upgrade_window | 是否显示升级提示窗 | false | true/false,由B站风控系统控制 |
+| .data.is_senior_member	number | 是否高龄用户 | 0 | 0=否，1=是(涉及青少年模式限制) |
+| .data.mcn_info | MCN机构 | null | 需签约 |
+| .data.gaia_res_type | Gaia项目资源类型 | 0 | Gaia=内部实验功能,0=未参与,1=基础实验组,2=高级实验组,3=控制组|
+| .data.gaia_data | Gaia项目数据 | null | 通常为null |
+| .data.is_risk | 风险账号标记 | false | true/false |
+| .data.elec.show_info.show | 是否开通充电功能 | true | true/false |
+| .data.elec.show_info.state | 充电状态 | 1 | 0=关闭,1=正常,2=临时关闭(如账号异常) |
+| .data.elec.show_info.title | 自定义标题 | (空) | 已弃用 |
+| .data.elec.show_info.icon | 自定义图标 | (空) | 已弃用 |
+| .data.elec.show_info.jump_url | 充电链接 | ?oid=3493083538786837 | 完整充电页链接=https://elec.bilibili.com+jump_url
+| .data.elec.show_info.total | 共收到充电次数 | 2 | 无 |
+| .data.elec.show_info.list | 充电记录 | null | 详细记录需要通过单独的API获取 |
+| .data.contract.is_display | 是否展示官方合约标识 | false | true/false |
+| .data.contract.is_follow_display | 是否在关注列表特殊展示 | false | true/false |
+| .data.certificate_show | 认证展示开关 | false | true/false |
+| .data.name_render | 昵称渲染控制 | null | 预留字段,用于特殊昵称样式控制<br>曾用于:<br>- 彩色渐变昵称<br>- 粉丝专属昵称样式<br>- 活动限定特效 |
 
 
 ## 附表
