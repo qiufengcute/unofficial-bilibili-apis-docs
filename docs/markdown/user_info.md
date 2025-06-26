@@ -351,6 +351,17 @@ print(requests.get(f"https://api.bilibili.com/x/space/acc/info?mid=3493083538786
 | .data.contract.is_follow_display | 是否在关注列表特殊展示 | false | true/false |
 | .data.certificate_show | 认证展示开关 | false | true/false |
 | .data.name_render | 昵称渲染控制 | null | 预留字段,用于特殊昵称样式控制<br>曾用于:<br>- 彩色渐变昵称<br>- 粉丝专属昵称样式<br>- 活动限定特效 |
+| .data.top_photo_v2.sid | 图片资源ID | 30495176 | 用于后台管理 |
+| .data.top_photo_v2.l_img | 标准分辨率横幅 | https://i0.hdslb.com/bfs/space/f35f1c09d709f5387814bbbfa614a391e73d9132.png | PC端使用,推荐尺寸:1920×200px |
+| .data.top_photo_v2.l_200h_img | 标准分辨率横幅 | https://i0.hdslb.com/bfs/space/f35f1c09d709f5387814bbbfa614a391e73d9132.png | 移动端使用,推荐尺寸:200x200px |
+| .data.theme | 主页主题 | null | 默认浅色主题(目前B站未开放自定义主题功能,该字段为预留) |
+| .data.attestation.type | 认证类型 | 0 | 已弃用 |
+| .data.attestation.common_info.title | 主标题 | (空) | 已弃用 |
+| .data.attestation.common_info.prefix | 前缀 | (空) | 已弃用 |
+| .data.attestation.common_info.prefix_title | 组合前缀 | (空) | 已弃用 |
+| .data.attestation.splice_info.title | 拼接标题 | (空) | 已弃用 |
+| .data.attestation.icon | 认证图标 | (空) | URL,已弃用 |
+| .data.attestation.desc | 认证描述 | (空) | 已弃用 |
 
 
 ## 附表
