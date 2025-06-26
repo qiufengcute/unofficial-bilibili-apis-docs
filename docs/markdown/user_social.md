@@ -21,7 +21,7 @@ https://api.bilibili.com/x/relation/stat?vmid=3493083538786837
 ```
 import requests
 
-print(requests.get(f"[https://api.bilibili.com/x/space/acc/info?mid=3493083538786837](https://api.bilibili.com/x/relation/stat?vmid=3493083538786837)"))
+print(requests.get(f"https://api.bilibili.com/x/relation/stat?vmid=3493083538786837"))
 ```
 
 
