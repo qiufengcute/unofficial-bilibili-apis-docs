@@ -1,4 +1,6 @@
 # unofficial-bilibili-apis-docs(简称UBAD)
+[![GitHub stars](https://img.shields.io/github/stars/qiufengcute/unofficial-bilibili-apis-docs.svg?style=flat&color=yellow)](https://github.com/qiufengcute/unofficial-bilibili-apis-docs/stargazers)
+[![GitHub license](https://img.shields.io/badge/MIT.svg?style=flat)](https://github.com/qiufengcute/unofficial-bilibili-apis-docs/blob/master/LICENSE)
 一个不经常更新的非官方b站API文档  
 我的b站uid是3493083538786837,后续将会经常出现  
 [我的b站主页](https://space.bilibili.com/3493083538786837)  
