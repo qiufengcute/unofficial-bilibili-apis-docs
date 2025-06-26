@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户互动 | 一个不经常更新的非官方b站API文档</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3, h4 {
+            color: #222;
+            margin-top: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        h1 {
+            font-size: 2em;
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 0.3em;
+        }
+        h2 {
+            font-size: 1.5em;
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 0.3em;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            display: block;
+            overflow-x: auto;
+        }
+        th, td {
+            border: 1px solid #dfe2e5;
+            padding: 6px 13px;
+        }
+        th {
+            background-color: #f6f8fa;
+            font-weight: 600;
+        }
+        tr:nth-child(2n) {
+            background-color: #f6f8fa;
+        }
+        pre {
+            background-color: #f6f8fa;
+            border-radius: 3px;
+            padding: 16px;
+            overflow: auto;
+            line-height: 1.45;
+            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+            border: 1px solid #e1e4e8;
+        }
+        code {
+            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+            background-color: rgba(27,31,35,0.05);
+            border-radius: 3px;
+            padding: 0.2em 0.4em;
+            font-size: 85%;
+        }
+        blockquote {
+            border-left: 4px solid #dfe2e5;
+            color: #6a737d;
+            padding: 0 1em;
+            margin: 0 0 16px 0;
+        }
+        a {
+            color: #00a1d6;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #00a1d6;
+            text-decoration: underline;
+        }
+        .github-links {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eaecef;
+        }
+        .github-links a {
+            display: block;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="用户互动">用户互动</h1>
+    <p>API地址: <code>https://api.bilibili.com/x/space/upstat</code></p>
+    
+    <h2 id="参数">参数</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>参数名</th>
+                <th>类型</th>
+                <th>必填</th>
+                <th>说明</th>
+                <th>示例值</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>mid</td>
+                <td>数字</td>
+                <td>是</td>
+                <td>查询用户的UID</td>
+                <td>3493083538786837</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h2 id="示例调用">示例调用</h2>
+    <blockquote>
+        <p>URL</p>
+    </blockquote>
+    <pre>https://api.bilibili.com/x/space/upstat?mid=3493083538786837</pre>
+    
+    <blockquote>
+        <p>python</p>
+    </blockquote>
+    <pre>import requests
+
+print(requests.get("https://api.bilibili.com/x/space/upstat?mid=3493083538786837"))</pre>
+    
+    <h2 id="示例返回">示例返回</h2>
+    <blockquote>
+        <p>json</p>
+    </blockquote>
+    <pre>{
+  "code": 0,
+  "message": "0",
+  "ttl": 1,
+  "data": {
+    "archive": {
+      "enable_vt": 0,
+      "view": 14736,
+      "vt": 0
+    },
+    "article": {
+      "view": 0
+    },
+    "likes": 360
+  }
+}</pre>
+    
+    <h2 id="返回参数">返回参数</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>参数地址</th>
+                <th>内容</th>
+                <th>示例</th>
+                <th>备注</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>.code</td>
+                <td>返回代码</td>
+                <td>0</td>
+                <td>0为正常(200)</td>
+            </tr>
+            <tr>
+                <td>.message</td>
+                <td>错误代码</td>
+                <td>0</td>
+                <td>在code为0时此处也为0</td>
+            </tr>
+            <tr>
+                <td>.ttl</td>
+                <td>失效时间(s)</td>
+                <td>1</td>
+                <td>互动信息随时会变动,所以一般都是1</td>
+            </tr>
+            <tr>
+                <td>.data.archive.enable_vt</td>
+                <td>VT功能启用状态</td>
+                <td>0</td>
+                <td>0=未启用(VT可能是某种互动功能)</td>
+            </tr>
+            <tr>
+                <td>.data.archive.view</td>
+                <td>视频总播放量</td>
+                <td>14736</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>.data.archive.vt</td>
+                <td>VT相关数据值</td>
+                <td>0</td>
+                <td>具体含义不明，当前为0</td>
+            </tr>
+            <tr>
+                <td>.data.article.view</td>
+                <td>文章总阅读量</td>
+                <td>0</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>.data.likes</td>
+                <td>获得的总点赞数</td>
+                <td>360</td>
+                <td>无</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="github-links">
+        <a href="https://qiufengcute.github.io/unofficial-bilibili-apis-docs/">返回主页</a>
+        <a href="https://github.com/qiufengcute/unofficial-bilibili-apis-docs/edit/main/docs/html/user_Interactions.html">在Github上编辑此页(html)</a>
+        <a href="https://github.com/qiufengcute/unofficial-bilibili-apis-docs/edit/main/docs/markdown/user_Interactions.md">在Github上编辑此页(markdown)</a>
+        <a href="https://github.com/qiufengcute/unofficial-bilibili-apis-docs/">Github上的此项目</a>
+    </div>
+</body>
+</html>
