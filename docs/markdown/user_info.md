@@ -1,5 +1,5 @@
 # 用户信息  
-API地址:https://api.bilibili.com/x/space/acc/info 
+API地址:`https://api.bilibili.com/x/space/acc/info`  
 ## 参数  
 | 参数名 | 类型   | 必填 | 说明               | 示例值           |
 |--------|--------|------|--------------------|------------------|
