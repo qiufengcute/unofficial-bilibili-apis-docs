@@ -43,6 +43,7 @@ print(requests.get(f"https://api.bilibili.com/x/space/notice?mid=349308353878683
 | .data  | 公告内容  | (空) |  空是因为我没有公告 |  
 
 ## Github链接
+[返回主页](https://qiufengcute.github.io/unofficial-bilibili-apis-docs/)
 [在Github上编辑此页(html)](https://github.com/qiufengcute/unofficial-bilibili-apis-docs/edit/main/docs/html/notice.html)  
 [在Github上编辑此页(markdown)](https://github.com/qiufengcute/unofficial-bilibili-apis-docs/edit/main/docs/markdown/notice.md)  
 [Github上的此项目](https://github.com/qiufengcute/unofficial-bilibili-apis-docs/)
