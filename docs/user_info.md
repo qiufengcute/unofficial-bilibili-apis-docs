@@ -213,5 +213,70 @@ json
 ```
 
 ## 返回参数
+| 参数地址  |  内容 |  示例 |  备注 |
+| ------------ | ------------ | ------------ | ------------ |
+| .code  | 返回代码  | 0  |  0为正常（200） |
+|  .message | 错误代码  | 0  | 在code为0是此处也为0  |
+|  .ttl |  失效时间（s） | 1  | 用户信息随时会变动，所以一般都是1  |
+| .data.mid  | uid  | 3493083538786837  |  无 |
+|  .data.name | 用户名  | 秋风wkhv  | 无  |
+| .data.sex  | 性别  |  男 |  无 |
+| .data.face  |  头像 | https://i1.hdslb.com/bfs/face/a94fdc7eec613197f6a7f56232721f3940dc4812.jpg  | URL  |
+| .data.face_nft  |  是否是数字藏品头像 |  0 | 0不是，1是  |
+| .data.face_nft_type  |  头像 NFT 类型 | 0  | 0应该是普通头像（非NFT），其他目前我不知道  |
+| .data.sign  | 个性签名  | 互关互助  | 无  |
+| .data.rank  |  用户等级标识 | 10000  | 我完全不知道  |
+|  .data.level | 等级  |  5 | 无  |
+| .data.jointime  | 入站时间（时间戳）  | 0  | 这个东西目前已经失效，之前是可以根据他获取入站时间的  |
+|  .data.moral |  道德分 |  0 | -n分  |
+|  .data.silence |  静言状态 |  0 | 0正常，1被禁言  |
+| .data.coins  |  硬币数量 | 374.8  | 小数是因为给视频投一个币=给up主0.1个币  |
+| .data.fans_badge  | 是否有粉丝勋章  | true  | true/false，即使过期也算  |
+| .data.fans_medal.show  | 是否显示粉丝勋章  | true  |  true/false |
+| .data.fans_medal.wear  |  是否佩戴勋章 | true  |  true/false |
+| .data.fans_medal.medal.uid  | 你的uid  | 3493083538786837  | 和.data.mid一模一样  |
+| .data.fans_medal.medal.target_id  |  主播的uid |  431073645 |  无 |
+| .data.fans_medal.medal.medal_id  |  勋章唯一ID | 187507  |  b站内部标识 |
+| .data.fans_medal.medal.level  | 勋章等级  | 12  |  无 |
+| .data.fans_medal.medal.medal_name  | 勋章名  | 举爪爪  |  无 |
+| .data.fans_medal.medal.medal_color  | 勋章主色  | 9272486  | RGB10进制值  |
+| .data.fans_medal.medal.next_intimacy  | 升级所需亲密度  | 10000  | 无  |
+| .data.fans_medal.medal.day_limit  | 一天最多可得亲密度  | 10000  | 无  |
+| .data.fans_medal.medal.medal_color_start  |  渐变起始色 | 9272486  | 同主色，无渐变时与主色一致  |
+| .data.fans_medal.medal.medal_color_end  |  渐变结束色 | 9272486  |  同主色 |
+| .data.fans_medal.medal.medal_color_border  | 边框颜色  | 9272486  | 同主色  |
+| .data.fans_medal.medal.is_lighted  |  是否点亮 | 1  |  短期过期还是1，但长期过期可能就变成0了 |
+| .data.fans_medal.medal.light_status  |  是否激活过 | 1  | 一般都是1（激活过），不会是0（没激活过），即使勋章已过期  |
+| .data.fans_medal.medal.wearing_status  |  佩戴状态 |  1 |  1=正在佩戴，0=未佩戴 |
+| .data.fans_medal.medal.score  | 总亲密度  |  31050 | 无  |
+| .data.official.role  |  认证角色类型 |  0 | 见附表1  |
+| .data.official.title  | 认证标题  |  （空） | 显示在用户主页的认证标识旁边的文字  |
+| .data.official.decs  | 认证描述  | （空）  | 对认证的详细说明  |
+| .data.official.type  | 认证大类  |  -1 | 见附表2  |
+| .data.  |   |   |   |
+| .data.  |   |   |   |
+
+## 附表
+
+### 附表1  
+| 值  |  含义 | 示例用户  |
+| ------------ | ------------ | -------------|
+| 0  |        无认证     |        普通用户  |
+|  1 | 	官方认证（初级）  |小有名气的UP主|
+|  2 | 知名认证（中级）| 头部UP主/主播 |
+| 3  | 权威认证（高级）  |  明星/官方机构    |
+|  4 | 用户名  | 企业认证    |	企业号|
+|  5 | 用户名  |  政府/媒体认证  |政府机构/官媒|
+
+
+ ### 附表2   
+| 数字  |  含义 |
+| ------------ | ------------ |
+| -1  |        无认证     |
+|  0 | 	个人认证（普通UP主/主播）  |
+|  1 | 机构认证（企业/学校等）|
+| 2  | 政府/媒体认证  |
+
+
 ## 备注
 这个API非常容易请求过于频繁
