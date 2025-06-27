@@ -1,6 +1,8 @@
 # unofficial-bilibili-apis-docs(简称UBAD)
 <h3 align="center">
-  <img src="img/icon.png" width="100" alt="UBAD">
+  <a href="https://qiufengcute.github.io/unofficial-bilibili-apis-docs/" style="display: inline-block;">
+    <img src="img/icon.png" width="100" alt="UBAD">
+  </a>
 </h3>
 
 [![GitHub stars](https://img.shields.io/github/stars/qiufengcute/unofficial-bilibili-apis-docs.svg?style=flat&color=yellow)](https://github.com/qiufengcute/unofficial-bilibili-apis-docs/stargazers)
