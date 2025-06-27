@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON获取键 | 非官方B站API文档</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #222;
+            margin-top: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 0.3em;
+        }
+        pre {
+            background-color: #f6f8fa;
+            border-radius: 3px;
+            padding: 16px;
+            overflow: auto;
+            line-height: 1.45;
+            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+            border: 1px solid #e1e4e8;
+        }
+        blockquote {
+            border-left: 4px solid #dfe2e5;
+            color: #6a737d;
+            padding: 0 1em;
+            margin: 0 0 16px 0;
+        }
+        a {
+            color: #00a1d6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .github-links {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eaecef;
+        }
+        .github-links a {
+            display: block;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="json获取键">JSON获取键</h1>
+    
+    <h2 id="代码">代码</h2>
+    <blockquote>
+        <p>python</p>
+    </blockquote>
+    <pre>def get_json_text(json_data,path_text):
+    temp = json_data
+    for i in path_text.split('.')[1:]:
+        temp = temp[str(i)]
+    return temp</pre>
+    
+    <h2 id="使用方法">使用方法</h2>
+    <blockquote>
+        <p>python</p>
+    </blockquote>
+    <pre>json = # 获取到的json
+path = # 路径
+print(get_json_text(json,path))</pre>
+
+    <h2 id="github链接">Github链接</h2>
+    <div class="github-links">
+        <a href="https://qiufengcute.github.io/unofficial-bilibili-apis-docs/">返回主页</a>
+        <a href="https://github.com/qiufengcute/unofficial-bilibili-apis-docs/edit/main/docs/html/get_json_text.html">在Github上编辑此页(html)</a>
+        <a href="https://github.com/qiufengcute/unofficial-bilibili-apis-docs/edit/main/docs/markdown/get_json_text.md">在Github上编辑此页(markdown)</a>
+        <a href="https://github.com/qiufengcute/unofficial-bilibili-apis-docs/">Github上的此项目</a>
+    </div>
+</body>
+</html>
