@@ -25,6 +25,7 @@
 - [用户创作](docs/html/user_authoring.html)
 - [用户互动](docs/html/user_Interactions.html)
 - [扫码登录](docs/html/login.html)
+- [修改个性签名](docs/html/edit_sign.html)
 
 ## 备注
 本项目中的所有API链接将分2大类:  
