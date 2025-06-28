@@ -1,4 +1,5 @@
 # 用户社交
+第一类
 API地址:`https://api.bilibili.com/x/relation/stat`
 
 ## 参数
