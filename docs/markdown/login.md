@@ -1,9 +1,9 @@
 # 扫码登录
-## web端
-### 申请二维码
+## 申请二维码
+第一类
 API地址:`https://passport.bilibili.com/x/passport-login/web/qrcode/generate`  
 
-#### 示例调用  
+### 示例调用  
 >URL
 
 
@@ -19,7 +19,7 @@ import requests
 print(requests.get(f"https://passport.bilibili.com/x/passport-login/web/qrcode/generate"))
 ```
 
-#### 示例返回  
+### 示例返回  
 >json
 
 
@@ -35,7 +35,7 @@ print(requests.get(f"https://passport.bilibili.com/x/passport-login/web/qrcode/g
 }
 ```
 
-#### 返回参数
+### 返回参数
 | 参数地址  |  内容 |  示例 |  备注 |  
 | ------------ | ---------------- | ------------ | ------------ |   
 | .code  | 返回代码  | 0  |  0为正常(200) |  
@@ -44,14 +44,14 @@ print(requests.get(f"https://passport.bilibili.com/x/passport-login/web/qrcode/g
 | .data.url  | 二维码  | https://account.bilibili.com/h5/account-h5/auth/scan-web?navhide=1&callback=close&qrcode_key=d2ed5da2e9f3fc5d52064f18a2c85259&from= |  URL |  
 | .data.qrcode_key  | 二维码key  | d2ed5da2e9f3fc5d52064f18a2c85259 |  和url中的qrcode_key参数一模一样 |  
 
-#### 生成二维码
+### 生成二维码
 你可以使用python中的qrcode库来生成二维码,使用PIL以及tkinter库来显示二维码(tkinter库为官方标准库,无需安装)
-##### 安装库
+#### 安装库
 > cmd
 ```
 pip install qrcode[pil]
 ```
-##### 生成
+#### 生成
 > python
 ```
 import qrcode
@@ -70,7 +70,7 @@ qr.make(fit=True)
 qc = qr.make_image(fill_color="black", back_color="white")
 ```
 这样你就把生成的二维码保存到了qc变量
-##### 显示
+#### 显示
 > python
 ```
 from PIL import ImageTk,Image
@@ -87,17 +87,18 @@ label.pack()
 root.mainloop()
 ```
 然后让用户扫码即可
-#### 备注
+### 备注
 生成的qrcode_key有效期为180秒
 
-### 登录检查
+## 登录检查
+第一类
 API地址:`https://passport.bilibili.com/x/passport-login/web/qrcode/poll`
-#### 参数  
+### 参数  
 | 参数名 | 类型   | 必填 | 说明               | 示例值           |
 |--------|--------|------|--------------------|------------------|
 | qrcode_key    | 字符串 | 是   | 二维码key     | d2ed5da2e9f3fc5d52064f18a2c85259 |
 
-#### 示例调用  
+### 示例调用  
 >URL
 
 
@@ -113,7 +114,7 @@ import requests
 print(requests.get(f"https://passport.bilibili.com/x/passport-login/web/qrcode/poll?qrcode_key=d2ed5da2e9f3fc5d52064f18a2c85259"))
 ```
 
-#### 示例返回  
+### 示例返回  
 >json
 
 
@@ -132,7 +133,7 @@ print(requests.get(f"https://passport.bilibili.com/x/passport-login/web/qrcode/p
 }
 ```
 
-#### 返回参数
+### 返回参数
 | 参数地址  |  内容 |  示例 |  备注 |  
 | ------------ | ---------------- | ------------ | ------------ |   
 | .code  | 返回代码  | 0  |  0为正常(200) |  
