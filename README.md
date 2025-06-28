@@ -24,7 +24,7 @@
 - [用户社交](docs/html/user_social.html)
 - [用户创作](docs/html/user_authoring.html)
 - [用户互动](docs/html/user_Interactions.html)
-- [扫码登录](decs/html/login.html)
+- [扫码登录](docs/html/login.html)
 
 ## 备注
 本项目中的所有API链接均需要使用Post进行请求
