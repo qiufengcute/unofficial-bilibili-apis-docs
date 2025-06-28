@@ -99,12 +99,11 @@
 <body>
     <h1 id="扫码登录">扫码登录</h1>
     
-    <h2 id="web端">web端</h2>
+    <h2 id="申请二维码">申请二维码</h2>
+    <p>第一类</p>
+    <p>API地址:<code>https://passport.bilibili.com/x/passport-login/web/qrcode/generate</code></p>
     
-    <h3 id="申请二维码">申请二维码</h3>
-    <p>API地址: <code>https://passport.bilibili.com/x/passport-login/web/qrcode/generate</code></p>
-    
-    <h4 id="示例调用">示例调用</h4>
+    <h3 id="示例调用">示例调用</h3>
     <blockquote>
         <p>URL</p>
     </blockquote>
@@ -117,7 +116,7 @@
 
 print(requests.get("https://passport.bilibili.com/x/passport-login/web/qrcode/generate"))</pre>
     
-    <h4 id="示例返回">示例返回</h4>
+    <h3 id="示例返回">示例返回</h3>
     <blockquote>
         <p>json</p>
     </blockquote>
@@ -131,7 +130,7 @@ print(requests.get("https://passport.bilibili.com/x/passport-login/web/qrcode/ge
   }
 }</pre>
     
-    <h4 id="返回参数">返回参数</h4>
+    <h3 id="返回参数">返回参数</h3>
     <table>
         <thead>
             <tr>
@@ -175,16 +174,16 @@ print(requests.get("https://passport.bilibili.com/x/passport-login/web/qrcode/ge
         </tbody>
     </table>
     
-    <h4 id="生成二维码">生成二维码</h4>
+    <h3 id="生成二维码">生成二维码</h3>
     <p>你可以使用python中的qrcode库来生成二维码,使用PIL以及tkinter库来显示二维码(tkinter库为官方标准库,无需安装)</p>
     
-    <h5 id="安装库">安装库</h5>
+    <h4 id="安装库">安装库</h4>
     <blockquote>
         <p>cmd</p>
     </blockquote>
     <pre>pip install qrcode[pil]</pre>
     
-    <h5 id="生成">生成</h5>
+    <h4 id="生成">生成</h4>
     <blockquote>
         <p>python</p>
     </blockquote>
@@ -204,7 +203,7 @@ qr.make(fit=True)
 qc = qr.make_image(fill_color="black", back_color="white")</pre>
     <p>这样你就把生成的二维码保存到了qc变量</p>
     
-    <h5 id="显示">显示</h5>
+    <h4 id="显示">显示</h4>
     <blockquote>
         <p>python</p>
     </blockquote>
@@ -222,13 +221,14 @@ label.pack()
 root.mainloop()</pre>
     <p>然后让用户扫码即可</p>
     
-    <h4 id="备注">备注</h4>
+    <h3 id="备注">备注</h3>
     <p>生成的qrcode_key有效期为180秒</p>
     
-    <h3 id="登录检查">登录检查</h3>
+    <h2 id="登录检查">登录检查</h2>
+    <p>第一类</p>
     <p>API地址: <code>https://passport.bilibili.com/x/passport-login/web/qrcode/poll</code></p>
     
-    <h4 id="参数">参数</h4>
+    <h3 id="参数">参数</h3>
     <table>
         <thead>
             <tr>
@@ -250,7 +250,7 @@ root.mainloop()</pre>
         </tbody>
     </table>
     
-    <h4 id="示例调用-1">示例调用</h4>
+    <h3 id="示例调用-1">示例调用</h3>
     <blockquote>
         <p>URL</p>
     </blockquote>
@@ -263,7 +263,7 @@ root.mainloop()</pre>
 
 print(requests.get("https://passport.bilibili.com/x/passport-login/web/qrcode/poll?qrcode_key=d2ed5da2e9f3fc5d52064f18a2c85259"))</pre>
     
-    <h4 id="示例返回-1">示例返回</h4>
+    <h3 id="示例返回-1">示例返回</3>
     <blockquote>
         <p>json</p>
     </blockquote>
@@ -280,7 +280,7 @@ print(requests.get("https://passport.bilibili.com/x/passport-login/web/qrcode/po
   }
 }</pre>
     
-    <h4 id="返回参数-1">返回参数</h4>
+    <h3 id="返回参数-1">返回参数</h3>
     <table>
         <thead>
             <tr>
