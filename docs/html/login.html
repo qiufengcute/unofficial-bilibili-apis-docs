@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>扫码登录 | 非官方B站API文档</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3, h4 {
+            color: #222;
+            margin-top: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        h1 {
+            font-size: 2em;
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 0.3em;
+        }
+        h2 {
+            font-size: 1.5em;
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 0.3em;
+        }
+        h3 {
+            font-size: 1.25em;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            display: block;
+            overflow-x: auto;
+        }
+        th, td {
+            border: 1px solid #dfe2e5;
+            padding: 6px 13px;
+        }
+        th {
+            background-color: #f6f8fa;
+            font-weight: 600;
+        }
+        tr:nth-child(2n) {
+            background-color: #f6f8fa;
+        }
+        pre {
+            background-color: #f6f8fa;
+            border-radius: 3px;
+            padding: 16px;
+            overflow: auto;
+            line-height: 1.45;
+            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+            border: 1px solid #e1e4e8;
+        }
+        code {
+            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+            background-color: rgba(27,31,35,0.05);
+            border-radius: 3px;
+            padding: 0.2em 0.4em;
+            font-size: 85%;
+        }
+        blockquote {
+            border-left: 4px solid #dfe2e5;
+            color: #6a737d;
+            padding: 0 1em;
+            margin: 0 0 16px 0;
+        }
+        a {
+            color: #00a1d6;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #00a1d6;
+            text-decoration: underline;
+        }
+        .github-links {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eaecef;
+        }
+        .github-links a {
+            display: block;
+            margin-bottom: 8px;
+        }
+        .status-codes {
+            background-color: #f6f8fa;
+            padding: 15px;
+            border-radius: 3px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="扫码登录">扫码登录</h1>
+    
+    <h2 id="web端">web端</h2>
+    
+    <h3 id="申请二维码">申请二维码</h3>
+    <p>API地址: <code>https://passport.bilibili.com/x/passport-login/web/qrcode/generate</code></p>
+    
+    <h4 id="示例调用">示例调用</h4>
+    <blockquote>
+        <p>URL</p>
+    </blockquote>
+    <pre>https://passport.bilibili.com/x/passport-login/web/qrcode/generate</pre>
+    
+    <blockquote>
+        <p>python</p>
+    </blockquote>
+    <pre>import requests
+
+print(requests.get("https://passport.bilibili.com/x/passport-login/web/qrcode/generate"))</pre>
+    
+    <h4 id="示例返回">示例返回</h4>
+    <blockquote>
+        <p>json</p>
+    </blockquote>
+    <pre>{
+  "code": 0,
+  "message": "0",
+  "ttl": 1,
+  "data": {
+    "url": "https://account.bilibili.com/h5/account-h5/auth/scan-web?navhide=1&callback=close&qrcode_key=d2ed5da2e9f3fc5d52064f18a2c85259&from=",
+    "qrcode_key": "d2ed5da2e9f3fc5d52064f18a2c85259"
+  }
+}</pre>
+    
+    <h4 id="返回参数">返回参数</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>参数地址</th>
+                <th>内容</th>
+                <th>示例</th>
+                <th>备注</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>.code</td>
+                <td>返回代码</td>
+                <td>0</td>
+                <td>0为正常(200)</td>
+            </tr>
+            <tr>
+                <td>.message</td>
+                <td>错误代码</td>
+                <td>0</td>
+                <td>在code为0时此处也为0</td>
+            </tr>
+            <tr>
+                <td>.ttl</td>
+                <td>失效时间(s)</td>
+                <td>1</td>
+                <td>二维码随时会过期,所以一般都是1</td>
+            </tr>
+            <tr>
+                <td>.data.url</td>
+                <td>二维码URL</td>
+                <td>https://account.bilibili.com/h5/account-h5/auth/scan-web?navhide=1&callback=close&qrcode_key=d2ed5da2e9f3fc5d52064f18a2c85259&from=</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>.data.qrcode_key</td>
+                <td>二维码key</td>
+                <td>d2ed5da2e9f3fc5d52064f18a2c85259</td>
+                <td>和url中的qrcode_key参数一模一样</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h4 id="生成二维码">生成二维码</h4>
+    <p>你可以使用python中的qrcode库来生成二维码,使用PIL以及tkinter库来显示二维码(tkinter库为官方标准库,无需安装)</p>
+    
+    <h5 id="安装库">安装库</h5>
+    <blockquote>
+        <p>cmd</p>
+    </blockquote>
+    <pre>pip install qrcode[pil]</pre>
+    
+    <h5 id="生成">生成</h5>
+    <blockquote>
+        <p>python</p>
+    </blockquote>
+    <pre>import qrcode
+
+qr_url = # 返回中的.data.url
+
+qr = qrcode.QRCode(
+    version=1,
+    error_correction=qrcode.constants.ERROR_CORRECT_L,
+    box_size=10,
+    border=4,
+)
+qr.add_data(qr_url)
+qr.make(fit=True)
+
+qc = qr.make_image(fill_color="black", back_color="white")</pre>
+    <p>这样你就把生成的二维码保存到了qc变量</p>
+    
+    <h5 id="显示">显示</h5>
+    <blockquote>
+        <p>python</p>
+    </blockquote>
+    <pre>from PIL import ImageTk,Image
+import tkinter as tk
+
+qc = # 刚刚生成的二维码
+root = tk.Tk()
+
+tk_image = ImageTk.PhotoImage(qc)
+
+label = tk.Label(root, image=tk_image)
+label.pack()
+
+root.mainloop()</pre>
+    <p>然后让用户扫码即可</p>
+    
+    <h4 id="备注">备注</h4>
+    <p>生成的qrcode_key有效期为180秒</p>
+    
+    <h3 id="登录检查">登录检查</h3>
+    <p>API地址: <code>https://passport.bilibili.com/x/passport-login/web/qrcode/poll</code></p>
+    
+    <h4 id="参数">参数</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>参数名</th>
+                <th>类型</th>
+                <th>必填</th>
+                <th>说明</th>
+                <th>示例值</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>qrcode_key</td>
+                <td>字符串</td>
+                <td>是</td>
+                <td>二维码key</td>
+                <td>d2ed5da2e9f3fc5d52064f18a2c85259</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h4 id="示例调用-1">示例调用</h4>
+    <blockquote>
+        <p>URL</p>
+    </blockquote>
+    <pre>https://passport.bilibili.com/x/passport-login/web/qrcode/poll?qrcode_key=d2ed5da2e9f3fc5d52064f18a2c85259</pre>
+    
+    <blockquote>
+        <p>python</p>
+    </blockquote>
+    <pre>import requests
+
+print(requests.get("https://passport.bilibili.com/x/passport-login/web/qrcode/poll?qrcode_key=d2ed5da2e9f3fc5d52064f18a2c85259"))</pre>
+    
+    <h4 id="示例返回-1">示例返回</h4>
+    <blockquote>
+        <p>json</p>
+    </blockquote>
+    <pre>{
+  "code": 0,
+  "message": "0",
+  "ttl": 1,
+  "data": {
+    "url": "",
+    "refresh_token": "",
+    "timestamp": 0,
+    "code": 86101,
+    "message": "未扫码"
+  }
+}</pre>
+    
+    <h4 id="返回参数-1">返回参数</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>参数地址</th>
+                <th>内容</th>
+                <th>示例</th>
+                <th>备注</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>.code</td>
+                <td>返回代码</td>
+                <td>0</td>
+                <td>0为正常(200)</td>
+            </tr>
+            <tr>
+                <td>.message</td>
+                <td>错误代码</td>
+                <td>0</td>
+                <td>在code为0时此处也为0</td>
+            </tr>
+            <tr>
+                <td>.ttl</td>
+                <td>失效时间(s)</td>
+                <td>1</td>
+                <td>扫码状态随时会过期,所以一般都是1</td>
+            </tr>
+            <tr>
+                <td>.data.url</td>
+                <td>游戏分站跨域登录url</td>
+                <td>(空)</td>
+                <td>未登录为空</td>
+            </tr>
+            <tr>
+                <td>.data.refresh_token</td>
+                <td>刷新token</td>
+                <td>(空)</td>
+                <td>未登录为空</td>
+            </tr>
+            <tr>
+                <td>.data.timestamp</td>
+                <td>登录时间</td>
+                <td>0</td>
+                <td>未登录为0,时间戳</td>
+            </tr>
+            <tr>
+                <td>.data.code</td>
+                <td>目前状态</td>
+                <td>86101</td>
+                <td>
+                    <div class="status-codes">
+                        0:扫码登录成功<br>
+                        86038:二维码已失效<br>
+                        86090:二维码已扫码未确认<br>
+                        86101:未扫码
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>.data.message</td>
+                <td>扫码状态</td>
+                <td>未扫码</td>
+                <td>无</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 id="github链接">Github链接</h2>
+    <div class="github-links">
+        <a href="https://qiufengcute.github.io/unofficial-bilibili-apis-docs/">返回主页</a>
+        <a href="https://github.com/qiufengcute/unofficial-bilibili-apis-docs/edit/main/docs/html/login.html">在Github上编辑此页(html)</a>
+        <a href="https://github.com/qiufengcute/unofficial-bilibili-apis-docs/edit/main/docs/markdown/login.md">在Github上编辑此页(markdown)</a>
+        <a href="https://github.com/qiufengcute/unofficial-bilibili-apis-docs/">Github上的此项目</a>
+    </div>
+</body>
+</html>
