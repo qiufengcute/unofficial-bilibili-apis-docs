@@ -1,4 +1,5 @@
 # 用户互动  
+第一类
 API地址:`https://api.bilibili.com/x/space/upstat`  
 ## 参数  
 | 参数名 | 类型   | 必填 | 说明               | 示例值           |
