@@ -27,7 +27,9 @@
 - [扫码登录](docs/html/login.html)
 
 ## 备注
-本项目中的所有API链接均需要使用Post进行请求
+本项目中的所有API链接将分2大类:
+第一类:获取信息类 需要使用Get进行请求
+第二类:修改信息类 需要使用Post进行请求
 
 ## Github链接
 [在Github上编辑此页(html)](https://github.com/qiufengcute/unofficial-bilibili-apis-docs/edit/main/index.html)  
