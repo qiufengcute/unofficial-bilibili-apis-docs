@@ -41,7 +41,7 @@ print(requests.get(f"https://passport.bilibili.com/x/passport-login/web/qrcode/g
 | .code  | 返回代码  | 0  |  0为正常(200) |  
 |  .message | 错误代码  | 0  | 在code为0时此处也为0  |  
 |  .ttl |  失效时间(s) | 1  | 二维码随时会过期,所以一般都是1  |  
-| .data.url  | 二维码  | https://account.bilibili.com/h5/account-h5/auth/scan-web?navhide=1&callback=close&qrcode_key=d2ed5da2e9f3fc5d52064f18a2c85259&from= |  URL |  
+| .data.url  | 登录界面  | https://account.bilibili.com/h5/account-h5/auth/scan-web?navhide=1&callback=close&qrcode_key=d2ed5da2e9f3fc5d52064f18a2c85259&from= |  URL |  
 | .data.qrcode_key  | 二维码key  | d2ed5da2e9f3fc5d52064f18a2c85259 |  和url中的qrcode_key参数一模一样 |  
 
 ### 生成二维码
