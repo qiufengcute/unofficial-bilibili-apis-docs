@@ -82,7 +82,7 @@ print(requests.get(f"https://api.live.bilibili.com/xlive/open-interface/v1/rtc/g
 | .code  | 返回代码  | 0  |  0为正常(200) |  
 |  .message | 错误代码  | 0  | 在code为0时此处也为0  |  
 |  .ttl |  失效时间(s) | 1  | 时间戳随时会变动,所以一般都是1  |  
-| .data.timestamp  | 服务器端UTC时间戳  | 1751172273 |  无 |  
+| .data.timestamp  | 服务器端UTC时间戳  | 1751172273 |  和"获取当前时间戳"那边获取出来的json中的.data.now一模一样 |  
 | .data.microtime  | 服务器端UTC时间戳  | 1751172575378 |  毫秒级 |  
 
 ## Github链接
