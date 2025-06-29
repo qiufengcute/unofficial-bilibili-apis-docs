@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时间戳 | 一个不经常更新的非官方B站API文档</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3, h4 {
+            color: #222;
+            margin-top: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        h1 {
+            font-size: 2em;
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 0.3em;
+        }
+        h2 {
+            font-size: 1.5em;
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 0.3em;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            display: block;
+            overflow-x: auto;
+        }
+        th, td {
+            border: 1px solid #dfe2e5;
+            padding: 6px 13px;
+        }
+        th {
+            background-color: #f6f8fa;
+            font-weight: 600;
+        }
+        tr:nth-child(2n) {
+            background-color: #f6f8fa;
+        }
+        pre {
+            background-color: #f6f8fa;
+            border-radius: 3px;
+            padding: 16px;
+            overflow: auto;
+            line-height: 1.45;
+        }
+        code {
+            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+            background-color: rgba(27,31,35,0.05);
+            border-radius: 3px;
+            padding: 0.2em 0.4em;
+            font-size: 85%;
+        }
+        blockquote {
+            border-left: 4px solid #dfe2e5;
+            color: #6a737d;
+            padding: 0 1em;
+            margin: 0 0 16px 0;
+        }
+        a {
+            color: #00a1d6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="时间戳">时间戳</h1>
+    
+    <h2 id="获取当前时间戳">获取当前时间戳</h2>
+    <p>第一类</p>
+    <p>API地址: <code>https://api.bilibili.com/x/report/click/now</code></p>
+    
+    <h3 id="示例调用">示例调用</h3>
+    <blockquote>
+        <p>URL</p>
+    </blockquote>
+    <pre><code>https://api.bilibili.com/x/report/click/now</code></pre>
+    
+    <blockquote>
+        <p>python</p>
+    </blockquote>
+    <pre><code>import requests
+
+print(requests.get(f"https://api.bilibili.com/x/report/click/now"))</code></pre>
+    
+    <h3 id="示例返回">示例返回</h3>
+    <blockquote>
+        <p>json</p>
+    </blockquote>
+    <pre><code>{
+  "code": 0,
+  "message": "0",
+  "ttl": 1,
+  "data": {
+    "now": 1751172273
+  }
+}</code></pre>
+    
+    <h3 id="返回参数">返回参数</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>参数地址</th>
+                <th>内容</th>
+                <th>示例</th>
+                <th>备注</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>.code</td>
+                <td>返回代码</td>
+                <td>0</td>
+                <td>0为正常(200)</td>
+            </tr>
+            <tr>
+                <td>.message</td>
+                <td>错误代码</td>
+                <td>0</td>
+                <td>在code为0时此处也为0</td>
+            </tr>
+            <tr>
+                <td>.ttl</td>
+                <td>失效时间(s)</td>
+                <td>1</td>
+                <td>时间戳随时会变动，所以一般都是1</td>
+            </tr>
+            <tr>
+                <td>.data.now</td>
+                <td>当前时间戳</td>
+                <td>1751172273</td>
+                <td>无</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h2 id="获取适用于rtc的时间戳">获取适用于RTC的时间戳</h2>
+    <p>第一类</p>
+    <p>API地址: <code>https://api.live.bilibili.com/xlive/open-interface/v1/rtc/getTimestamp</code></p>
+    
+    <h3 id="示例调用-1">示例调用</h3>
+    <blockquote>
+        <p>URL</p>
+    </blockquote>
+    <pre><code>https://api.live.bilibili.com/xlive/open-interface/v1/rtc/getTimestamp</code></pre>
+    
+    <blockquote>
+        <p>python</p>
+    </blockquote>
+    <pre><code>import requests
+
+print(requests.get(f"https://api.live.bilibili.com/xlive/open-interface/v1/rtc/getTimestamp"))</code></pre>
+    
+    <h3 id="示例返回-1">示例返回</h3>
+    <blockquote>
+        <p>json</p>
+    </blockquote>
+    <pre><code>{
+  "code": 0,
+  "message": "0",
+  "ttl": 1,
+  "data": {
+    "timestamp": 1751172575,
+    "microtime": 1751172575378
+  }
+}</code></pre>
+    
+    <h3 id="返回参数-1">返回参数</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>参数地址</th>
+                <th>内容</th>
+                <th>示例</th>
+                <th>备注</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>.code</td>
+                <td>返回代码</td>
+                <td>0</td>
+                <td>0为正常(200)</td>
+            </tr>
+            <tr>
+                <td>.message</td>
+                <td>错误代码</td>
+                <td>0</td>
+                <td>在code为0时此处也为0</td>
+            </tr>
+            <tr>
+                <td>.ttl</td>
+                <td>失效时间(s)</td>
+                <td>1</td>
+                <td>时间戳随时会变动，所以一般都是1</td>
+            </tr>
+            <tr>
+                <td>.data.timestamp</td>
+                <td>服务器端UTC时间戳</td>
+                <td>1751172273</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>.data.microtime</td>
+                <td>服务器端UTC时间戳</td>
+                <td>1751172575378</td>
+                <td>毫秒级</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h2 id="github链接">Github链接</h2>
+    <p>
+        <a href="https://qiufengcute.github.io/unofficial-bilibili-apis-docs/">返回主页</a><br>
+        <a href="https://github.com/qiufengcute/unofficial-bilibili-apis-docs/edit/main/docs/html/timestamp.html">在Github上编辑此页(html)</a><br>
+        <a href="https://github.com/qiufengcute/unofficial-bilibili-apis-docs/edit/main/docs/markdown/timestamp.md">在Github上编辑此页(markdown)</a><br>
+        <a href="https://github.com/qiufengcute/unofficial-bilibili-apis-docs/">Github上的此项目</a>
+    </p>
+</body>
+</html>
