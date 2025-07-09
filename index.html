@@ -13,6 +13,15 @@
             margin: 0 auto;
             padding: 20px;
         }
+        pre {
+            background-color: #f6f8fa;
+            border-radius: 3px;
+            padding: 16px;
+            overflow: auto;
+            line-height: 1.45;
+            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+            border: 1px solid #e1e4e8;
+        }
         h1, h2, h3 {
             color: #222;
             margin-top: 24px;
@@ -138,6 +147,48 @@
         第一类:获取信息类 需要使用Get进行请求<br>
         第二类:修改信息类 需要使用Post进行请求<br>
     </p>
+    
+    <h2>头部及cookies</h2>
+    <p>
+        最近,b站API好像变严格了<br>
+        如果不加头部及cookies就会出现412错误<br>
+        所以我提供一些信息<br>
+    </p>
+
+    <h3>头部</h3>
+    <pre>
+    {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36",
+        "Referer": "https://www.bilibili.com/",
+        "Origin": "https://www.bilibili.com"
+    }
+    </pre>
+    <h3>Cookies</h3>
+    <pre>
+    {
+        "SESSDATA": "见下文",
+        "bili_jct": "见下文"
+    }
+    </pre>
+    <h4>SESSDATA获取方式</h4>
+    <pre>
+        打开bilibili.com(请使用浏览器打开!!!),登录账号
+        点击F12(或者右键任意位置,点击检查)
+        点击"应用程序"
+        点击Cookie中的"https://www.bilibili.com"
+        点击SESSDATA
+        就是这里面的值
+    </pre>
+    <h4>bili_jct获取方式</h4>
+    <pre>
+        打开bilibili.com(请使用浏览器打开!!!),登录账号
+        点击F12(或者右键任意位置,点击检查)
+        点击"应用程序"
+        点击Cookie中的"https://www.bilibili.com"
+        点击bili_jct
+        就是这里面的值
+    </pre>
+    
     <h2>Github链接</h2>
     <p>
         <a href="https://github.com/qiufengcute/unofficial-bilibili-apis-docs/edit/main/index.html">在Github上编辑此页(html)</a><br>
